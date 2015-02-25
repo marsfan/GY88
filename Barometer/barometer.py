@@ -25,9 +25,13 @@ def read(address):
 	
 #read signed variables 16bytes
 def reads(address):
-	result = read(address)
-	if result > 32767: result -= 65536
-	return result
+	#result = read(address)
+	#might need to change to this, based on what I see. 
+	#if result > 32767: result -= 65536
+	if (result >= 0x8000):
+		return -((65535 - result) + 1)
+	else:
+		return result
 
 
 #read calibration values 

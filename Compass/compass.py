@@ -25,9 +25,11 @@ while (True):
 	y = ylsb + (ymsb << 8)
 	z = zlsb + (zmsb << 8)
 	time.sleep(.250)
-	if x > 32767: x -= 65536
-	if y > 32767: y -= 65536
-	if z > 32767: z -= 65536
+	#might need to switch to 
+	#if result > 32767: result -= 65536
+	if x > 32767: x = -((65535 - x) + 1)
+	if y > 32767: y = -((65535 - y) + 1)
+	if z > 32767: z = -((65535 - z) + 1)
 	x = x - xoffset
 	y = y - yoffset
 	#todo: find z offset
