@@ -1,21 +1,27 @@
-import sys, time, barometer, matplotlib.pyplot as plt
+import datetime, sys, time, csv, barometer, matplotlib.pyplot as plt
 
 temparray= []
 x = 0
 
+
 try:
     while True:
+        f = open("data.csv", 'a')
+        writer = csv.writer(f)
+        dattime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         temp = barometer.tempf()
         print(temp)
         print (x)
         x = x + 1
+        writer.writerow( (dattime, temp) )
         temparray.append(temp)
-        time.sleep(1)
+        f.close()
+        time.sleep(60)
 	
 	
 	
 except KeyboardInterrupt:
-    pass
+   pass
 
 plt.plot(temparray)
 plt.show()
