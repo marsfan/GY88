@@ -25,7 +25,7 @@ try:
 
 
 except KeyboardInterrupt:
-    pass
+   pass
 
 plt.plot(temparray)
 plt.show()
