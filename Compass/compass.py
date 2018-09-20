@@ -40,4 +40,4 @@ while (True):
 	#if heading > 2 * math.pi:
 #		heading -= 2 * math.pi
 	heading = math.degrees(heading)	
-	print heading
+	print(heading)

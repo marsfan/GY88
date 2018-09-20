@@ -52,10 +52,10 @@ def AZ():
 	return az
 
 def GX():
-	print "A"
+	print("A")
 	
 def GY():
-	print "A"
+	print("A")
 	
 def GZ():
-      print "A"
+      print("A")
