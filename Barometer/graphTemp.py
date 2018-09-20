@@ -1,19 +1,21 @@
-import sys, time, barometer, matplotlib.pyplot as plt
+import sys
+import time
+import barometer
+import matplotlib.pyplot as plt
 
-temparray= []
+temparray = []
 x = 0
 
 try:
     while True:
         temp = barometer.tempf()
         print(temp)
-        print (x)
+        print(x)
         x = x + 1
         temparray.append(temp)
         time.sleep(1)
-	
-	
-	
+
+
 except KeyboardInterrupt:
     pass
 
