@@ -1,6 +1,7 @@
+"""Get data from the GY88 Compass module."""
 import time
-import smbus
 import math
+import smbus
 
 bus = smbus.SMBus(1)
 addr = 0x1E
@@ -14,8 +15,10 @@ yoffset = - 350
 
 bus.write_byte_data(addr, 0x02, 0x00)
 
-# todo adjust so that the M_drdy pin will trigger reading, making reading faster. Sgeet says it goes low when data is ready. need to chek
-while (True):
+# todo adjust so that the M_drdy pin will trigger reading,
+# making reading faster.
+# Sgeet says it goes low when data is ready. need to check
+while True:
     # for i in range(0,250):
     xmsb = bus.read_byte_data(addr, 0x03)
     xlsb = bus.read_byte_data(addr, 0x04)
